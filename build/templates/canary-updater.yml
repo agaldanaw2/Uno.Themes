@@ -20,12 +20,12 @@ steps:
     condition: eq(variables['IsCanaryBranch'], true)
     retryCountOnTaskFailure: 3
     inputs:
-      solution: Uno.Themes.sln
+      solution: $(build.sourcesdirectory)
       useNuGetOrg: true
       usePrivateFeed: false
       mergeBranch: true
       branchToMerge: master
-      nugetUpdaterVersion: 2.1.1
-      packageAuthor: nventive
+      nugetUpdaterVersion: 2.3.0-alpha.35
+      packageAuthor: nventive,unoplatform
       summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
       resultFile: '$(Build.ArtifactStagingDirectory)/Results.json'
